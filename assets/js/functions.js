@@ -43,8 +43,6 @@ function AddDownload(id) {
     .then(response => response.json())
     .then(data => {
         if (data.status == "success") {
-            const button = document.querySelector(".song-btn");
-            button.innerText = "✓";
             // add to download list
             var download_list = document.getElementById("download-list");
             var download_item = document.createElement("li");
