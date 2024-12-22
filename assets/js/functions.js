@@ -34,7 +34,6 @@ var goButton = document.getElementById("search-trigger");
 }
 var DOWNLOAD_API = "https://openmp3compiler.astudy.org"
 function AddDownload(id) {
-    button.innerText = "✓";
     var bitrate = document.getElementById('saavn-bitrate');
     var bitrate_i = bitrate.options[bitrate.selectedIndex].value;
     // MP3 server API
@@ -44,6 +43,8 @@ function AddDownload(id) {
     .then(response => response.json())
     .then(data => {
         if (data.status == "success") {
+            const button = document.querySelector(".song-btn");
+            button.innerText = "✓";
             // add to download list
             var download_list = document.getElementById("download-list");
             var download_item = document.createElement("li");
