@@ -71,8 +71,8 @@ var song_artist = TextAbstract(track.primaryArtists,30);
 var bitrate = document.getElementById('saavn-bitrate');
 var bitrate_i = bitrate.options[bitrate.selectedIndex].value;
 if(track.downloadUrl) {
-var download_url = track.downloadUrl[1]['link'];
-var quality = "12kbps";
+var download_url = track.downloadUrl[0]['link'];
+var quality = "";
 // if (bitrate_i == 4) {quality = 320} else {quality = 160;}
     // push object to results array
     results_objects[song_id] = {
