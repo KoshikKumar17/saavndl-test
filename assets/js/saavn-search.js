@@ -25,7 +25,7 @@ async function doSaavnSearch(query,NotScroll,page) {
     document.querySelector("#saavn-search-box").value = decodeURIComponent(query);
     if(!query) {return 0;}
 results_container.innerHTML = `<span class="loader">Searching</span>`;
-    query=query+"&limit=40";
+    query=query+"&limit=10";
     if(page) {
         ;page_index=page_index+1;query=query+"&page="+page_index;
     } else {query=query+"&page=1";page_index=1;}
@@ -71,7 +71,7 @@ var song_artist = TextAbstract(track.primaryArtists,30);
 var bitrate = document.getElementById('saavn-bitrate');
 var bitrate_i = bitrate.options[bitrate.selectedIndex].value;
 if(track.downloadUrl) {
-var download_url = track.downloadUrl[bitrate_i]['link'];
+var download_url = track.downloadUrl[1]['link'];
 var quality = "";
 if (bitrate_i == 4) {quality = 320} else {quality = 160;}
     // push object to results array
